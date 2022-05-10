@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class Entity : MonoBehaviour
 {
@@ -41,10 +42,10 @@ public class Entity : MonoBehaviour
 
    public void TakeDamage(int damage)
    {
-      //CalculateStats();
       if (!DodgeChance((int)_dodgeChance))
       {
-         _currentHP -= damage - damage * _defence;
+         damage -= (int)(damage * _defence);
+         _currentHP -= damage;
          if (_currentHP <= 0)
          {
             _currentHP = 0;

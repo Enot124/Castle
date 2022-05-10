@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 4725db301c50cc04cbdad6b9a7f3fe14
+guid: fd43e939d4fe6704bb7e0175b1ea9656
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5822075771384370643
-    second: Telega_0
+      213: -8362341261245658341
+    second: Telega1_0
   - first:
-      213: 4799610779106242409
-    second: Telega_1
+      213: 8429767078568765057
+    second: Telega1_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -121,43 +121,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Telega_0
+      name: Telega1_0
       rect:
         serializedVersion: 2
-        x: 373
-        y: 166
-        width: 229
-        height: 194
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 369
+        y: 144
+        width: 332
+        height: 282
+      alignment: 9
+      pivot: {x: 0.50660175, y: 0.23574272}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2ae93fbee4d33fa0800000000000000
-      internalID: -5822075771384370643
+      spriteID: b1b4cd0bdeef2fb80800000000000000
+      internalID: -8362341261245658341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Telega_1
+      name: Telega1_1
       rect:
         serializedVersion: 2
-        x: 602
-        y: 171
-        width: 77
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 521
+        y: 25
+        width: 139
+        height: 103
+      alignment: 9
+      pivot: {x: 0.49999955, y: 0.36609867}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96f63ccf294ab9240800000000000000
-      internalID: 4799610779106242409
+      spriteID: 186af51ce7c8cf470800000000000000
+      internalID: 8429767078568765057
       vertices: []
       indices: 
       edges: []

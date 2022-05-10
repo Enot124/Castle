@@ -9,35 +9,22 @@ public class Interface : MonoBehaviour
    public Slider sliderExpierence;
    public Hero Hero;
 
-   private void Start()
-   {
-      SetMaxhealth((int)Hero._maxHP);
-   }
-
    private void Update()
    {
-      SetMaxhealth((int)Hero._maxHP);
-      SetHealth((int)Hero._currentHP);
-      SetMaxExpierence(Hero._maxExpierence);
-      SetExpierence(Hero._expierence);
+      SetHealthValue((int)Hero._currentHP, (int)Hero._maxHP);
+      SetExpierenceValue(Hero._expierence, Hero._maxExpierence);
    }
 
-   public void SetMaxhealth(int health)
-   {
-      sliderHealth.maxValue = health;
-   }
-   public void SetHealth(int health)
+   public void SetHealthValue(int health, int maxHealth)
    {
       sliderHealth.value = health;
+      sliderHealth.maxValue = maxHealth;
    }
 
-   public void SetMaxExpierence(int exp)
+   public void SetExpierenceValue(int expierence, int maxExpierence)
    {
-      sliderExpierence.maxValue = Hero._maxExpierence;
-   }
-   public void SetExpierence(int exp)
-   {
-      sliderExpierence.value = Hero._expierence;
+      sliderExpierence.value = expierence;
+      sliderExpierence.maxValue = maxExpierence;
    }
 
    public void ShowMenu()

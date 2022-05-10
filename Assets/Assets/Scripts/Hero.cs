@@ -10,6 +10,7 @@ public class Hero : Entity
    public GameObject parametresButtons;
    public GameObject menu;
    public Transform enemy;
+   private bool _isKrit;
 
    private MoveState _moveState
    {
@@ -103,9 +104,10 @@ public class Hero : Entity
    {
       int damage = (int)_attack;
       if (KritChance((int)_kritChance))
+      {
          damage *= 2;
+      }
       Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, _attackRange, enemyLayer);
-
       foreach (Collider2D enemy in hitEnemies)
       {
          enemy.GetComponent<Entity>().TakeDamage(damage);

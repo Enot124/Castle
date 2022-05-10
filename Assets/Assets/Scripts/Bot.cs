@@ -1,10 +1,12 @@
 using UnityEngine;
-
+using TMPro;
 public class Bot : Entity
 {
    private Animator _animator;
+   private bool _isDied = false;
    [SerializeField] private Transform attackPoint;
    [SerializeField] private LayerMask enemyLayer;
+   private bool _isKrit;
    public Transform Hero;
    private BotState _moveState
    {
@@ -17,22 +19,38 @@ public class Bot : Entity
    {
       _animator = GetComponent<Animator>();
       CalculateStats();
+      _currentHP = _maxHP;
+   }
+
+   private void Update()
+   {
+      if (!_isDied)
+      {
+         float distanceToPlayer = Vector2.Distance(attackPoint.position, Hero.position);
+         if (distanceToPlayer <= _attackRange)
+         {
+            _isAttack = true;
+            Attack();
+         }
+         else
+         {
+            if (_isAttack)
+               Invoke("IsNoAttack", 4f);
+         }
+      }
    }
    private void FixedUpdate()
    {
-      if (_timer > 0)
-         _timer -= Time.deltaTime;
-      Idle();
-      float distanceToPlayer = Vector2.Distance(attackPoint.position, Hero.position);
-      if (distanceToPlayer <= _attackRange)
+      if (!_isDied)
       {
-         _isAttack = true;
-         Attack();
-      }
-      else
-      {
-         if (_isAttack)
-            Invoke("IsNoAttack", 4f);
+         if (_timer > 0)
+            _timer -= Time.deltaTime;
+         Idle();
+
+         if (_currentHP < _maxHP && !_isAttack)
+         {
+            _currentHP += _maxHP * 0.0003f;
+         }
       }
    }
    protected override void Attack()
@@ -61,6 +79,12 @@ public class Bot : Entity
    {
       Gizmos.color = Color.red;
       Gizmos.DrawWireSphere(attackPoint.position, _attackRange);
+   }
+
+   protected override void Die()
+   {
+      _isDied = true;
+      _animator.SetTrigger("Die");
    }
 
 
