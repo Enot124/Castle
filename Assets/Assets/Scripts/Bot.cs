@@ -6,7 +6,6 @@ public class Bot : Entity
    private bool _isDied = false;
    [SerializeField] private Transform attackPoint;
    [SerializeField] private LayerMask enemyLayer;
-   private bool _isKrit;
    public Transform Hero;
    private BotState _moveState
    {
