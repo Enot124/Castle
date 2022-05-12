@@ -105,6 +105,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -772,6 +773,34 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Bez_imeni-1 (1)_6: 3167847096697766198
+      Bez_imeni-1 (1)_11: 7647216682831768028
+      Bez_imeni-1 (1)_13: -1733851124350999040
+      Bez_imeni-1 (1)_20: 2379166327508150825
+      Bez_imeni-1 (1)_19: 4229506706625182174
+      Bez_imeni-1 (1)_16: -6798535767557693330
+      Bez_imeni-1 (1)_8: 2390510202134373170
+      Bez_imeni-1 (1)_25: 8657053694615206705
+      Bez_imeni-1 (1)_0: 3638723154682659595
+      Bez_imeni-1 (1)_10: 831598990396403911
+      Bez_imeni-1 (1)_17: -2712287018987906354
+      Bez_imeni-1 (1)_21: -5509965081681629680
+      Bez_imeni-1 (1)_22: 7097335086473398230
+      Bez_imeni-1 (1)_15: 3511889455278104870
+      Bez_imeni-1 (1)_23: -8791989593729637481
+      Bez_imeni-1 (1)_5: -6034264563881805406
+      Bez_imeni-1 (1)_3: -2497971134739233937
+      Bez_imeni-1 (1)_12: 7837064054440664520
+      Bez_imeni-1 (1)_4: -8973864569114472405
+      Bez_imeni-1 (1)_18: 8956094322395362253
+      Bez_imeni-1 (1)_9: -3770998579892705453
+      Bez_imeni-1 (1)_24: 437301761637423959
+      Bez_imeni-1 (1)_1: -7444628809438305025
+      Bez_imeni-1 (1)_14: -5640937021066815382
+      Bez_imeni-1 (1)_2: -5807479389737460742
+      Bez_imeni-1 (1)_7: -4051183802675162805
+      Bez_imeni-1 (1)_26: -8111005052346686029
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

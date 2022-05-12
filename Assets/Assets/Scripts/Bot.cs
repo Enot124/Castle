@@ -1,6 +1,6 @@
 using UnityEngine;
 using TMPro;
-public class Bot : Entity
+public class Bot : Entity<Bot>
 {
    private Animator _animator;
    private bool _isDied = false;
@@ -52,7 +52,7 @@ public class Bot : Entity
          }
       }
    }
-   protected override void Attack()
+   protected void Attack()
    {
       if (_timer <= 0)
       {
@@ -70,7 +70,7 @@ public class Bot : Entity
       Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, _attackRange, enemyLayer);
       foreach (Collider2D enemy in hitEnemies)
       {
-         enemy.GetComponent<Entity>().TakeDamage(damage);
+         enemy.GetComponent<Entity<Hero>>().TakeDamage(damage);
          Debug.Log(enemy.name + " was delt " + damage + " damage!");
       }
    }
