@@ -38,6 +38,7 @@ public class Hero : Entity<Hero>, ICanMove
 
     void Update()
     {
+        var sword = transform.Find("Sword");
         // dir.x = Input.GetAxisRaw("Horizontal");
         // dir.y = Input.GetAxisRaw("Vertical");
         // if (dir.x == 0)
