@@ -2,7 +2,7 @@ using UnityEngine;
 using TMPro;
 using Assembly_CSharp.Assets.Assets.Scripts.Interfaces;
 
-public class Hero : Entity<Hero>, ICanMove, ICanAttack
+public class Hero : Entity<Hero>, ICanMove, ICanAttack, IDamageable
 {
    public int _maxExpierence = 100;
    public int _levelStats = 0;
@@ -14,6 +14,12 @@ public class Hero : Entity<Hero>, ICanMove, ICanAttack
    public float KritChance { get => _kritChance; }
    public bool IsCanAttack { get; set; }
    #endregion Attack
+
+   #region OnAttack      
+   public float Defence { get; }
+   public float DodgeChance { get; }
+   public float CurrentHealth { get; }
+   public float MaxHealth { get; }
 
    #region Movement
    public float Speed { get => _speed; }
