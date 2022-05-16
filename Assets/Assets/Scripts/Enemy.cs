@@ -23,7 +23,7 @@ public class Enemy : Entity<Enemy>
 
    private void Update()
    {
-      if (!_isDied)
+      /*if (!_isDied)
       {
          float distanceToPlayer = Vector2.Distance(attackPoint.position, Hero.position);
          if (distanceToPlayer <= _attackRange)
@@ -36,11 +36,11 @@ public class Enemy : Entity<Enemy>
             if (_isAttack)
                Invoke("IsNoAttack", 4f);
          }
-      }
+      }*/
    }
    private void FixedUpdate()
    {
-      if (!_isDied)
+      /*if (!_isDied)
       {
          if (_timer > 0)
             _timer -= Time.deltaTime;
@@ -50,7 +50,7 @@ public class Enemy : Entity<Enemy>
          {
             _currentHP += _maxHP * 0.0003f;
          }
-      }
+      }*/
    }
    /*protected void Attack()
    {
@@ -77,7 +77,7 @@ public class Enemy : Entity<Enemy>
    private void OnDrawGizmos()
    {
       Gizmos.color = Color.red;
-      Gizmos.DrawWireSphere(attackPoint.position, _attackRange);
+      //Gizmos.DrawWireSphere(attackPoint.position, _attackRange);
    }
 
    protected override void Die()
@@ -91,10 +91,10 @@ public class Enemy : Entity<Enemy>
    {
       _moveState = EnemyState.Idle;
    }
-   private void IsNoAttack()
+   /*private void IsNoAttack()
    {
       _isAttack = false;
-   }
+   }*/
 }
 
 enum EnemyState

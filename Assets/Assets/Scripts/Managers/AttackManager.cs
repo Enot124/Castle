@@ -14,7 +14,12 @@ namespace Assembly_CSharp.Assets.Assets.Scripts.Managers
             {
                damage *= 2;
             }
-            //Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position,_attackRange, enemyLayer);
+            Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(entity.AttackPoint, entity.AttackRange, entity.OppositeLayer);
+            foreach (Collider2D enemy in hitEnemies)
+            {
+               enemy.GetComponent<Entity<Enemy>>().TakeDamage(damage, enemy);
+               Debug.Log(enemy.name + " was delt " + damage + " damage!");
+            }
          }
          /*
    if (_timer <= 0)
@@ -45,23 +50,24 @@ public void OnAttack()
          return Random.Range(0, 100) < chance;
       }
 
-      public bool DodgeChance(int chance)
+      public static bool DodgeChance(int chance)
       {
          return Random.Range(0, 100) < chance;
       }
 
-      public void TakeDamage(int damage)
+      public static void TakeDamage(int damage, IDamageable entity)
       {
-         /*if (!DodgeChance((int)_dodgeChance))
+         if (!DodgeChance((int)entity.DodgeChance))
          {
-            damage -= (int)(damage * _defence);
-            _currentHP -= damage;
-            if (_currentHP <= 0)
+            damage -= (int)(damage * entity.Defence);
+            entity.CurrentHealth -= damage;
+            if (entity.CurrentHealth <= 0)
             {
-               _currentHP = 0;
-               Die();
+               entity.CurrentHealth = 0;
+               //Die();
             }
-         }*/
+         }
+
       }
    }
 }

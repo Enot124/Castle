@@ -13,13 +13,16 @@ public class Hero : Entity<Hero>, ICanMove, ICanAttack, IDamageable
    public float Damage { get => _attack; }
    public float KritChance { get => _kritChance; }
    public bool IsCanAttack { get; set; }
+   public Vector2 AttackPoint { get => attackPoint.position; }
+   public Vector2 AttackRange { get => _attackRange; }
+   public LayerMask OppositeLayer { get => _layer; }
    #endregion Attack
 
    #region OnAttack      
-   public float Defence { get; }
-   public float DodgeChance { get; }
-   public float CurrentHealth { get; }
-   public float MaxHealth { get; }
+   public float Defence { get => _defence; }
+   public float DodgeChance { get => _dodgeChance; }
+   public float CurrentHealth { get => _currentHP; set => _currentHP = value; }
+   #endregion OnAttack  
 
    #region Movement
    public float Speed { get => _speed; }
@@ -84,14 +87,14 @@ public class Hero : Entity<Hero>, ICanMove, ICanAttack, IDamageable
 
    private void FixedUpdate()
    {
-      //rb.MovePosition(rb.position + dir * speed * Time.deltaTime);
+      /*rb.MovePosition(rb.position + dir * speed * Time.deltaTime);
       if (_currentHP < _maxHP && !_isAttack)
       {
          _currentHP += _maxHP * 0.0003f;
          WriteStats();
       }
       if (_timer > 0)
-         _timer -= Time.deltaTime;
+         _timer -= Time.deltaTime;*/
    }
 
    /*public void OnAttack()
@@ -112,13 +115,13 @@ public class Hero : Entity<Hero>, ICanMove, ICanAttack, IDamageable
    private void OnDrawGizmos()
    {
       Gizmos.color = Color.red;
-      Gizmos.DrawWireSphere(attackPoint.position, _attackRange);
+      //Gizmos.DrawWireSphere(attackPoint.position, _attackRange);
    }
 
-   private void IsNoAttack()
+   /*private void IsNoAttack()
    {
       _isAttack = false;
-   }
+   }*/
 
 
    #region LevelSystem

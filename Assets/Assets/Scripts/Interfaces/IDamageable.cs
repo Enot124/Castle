@@ -4,7 +4,6 @@ namespace Assembly_CSharp.Assets.Assets.Scripts.Interfaces
    {
       public float Defence { get; }
       public float DodgeChance { get; }
-      public float CurrentHealth { get; }
-      public float MaxHealth { get; }
+      public float CurrentHealth { get; set; }
    }
 }

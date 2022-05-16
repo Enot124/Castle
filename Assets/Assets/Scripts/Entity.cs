@@ -6,11 +6,10 @@ public abstract class Entity<T> : MonoBehaviour
 {
    public AnimationManagerBase<T> AnimationManager { get; set; }
    public string _name;
-   public float _attackRange = 0.5f;
+   public Vector2 _attackRange;
+   public LayerMask _layer;
    public int _expierence;
    public int _level;
-   public float _timer;
-   public bool _isAttack;
    public float _speed = 3f;
 
    #region  Attributes
