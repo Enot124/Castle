@@ -1,71 +1,59 @@
 using UnityEngine;
-using TMPro;
 using Assembly_CSharp.Assets.Assets.Scripts.AnimationManagers;
 
 public abstract class Entity<T> : MonoBehaviour
    where T : Component
 {
-    public AnimationManagerBase<T> AnimationManager { get; set; }
-    public string _name;
-    public float _attackRange = 0.5f;
-    public int _expierence;
-    public int _level;
-    public float _timer;
-    public bool _isAttack;
-    //Атрибуты персонажа
-    public int _strange = 1;
-    public int _agility = 1;
-    public int _endurance = 1;
-    public int _luck = 1;
-    public int _magic = 1;
+   public AnimationManagerBase<T> AnimationManager { get; set; }
+   public string _name;
+   public float _attackRange = 0.5f;
+   public int _expierence;
+   public int _level;
+   public float _timer;
+   public bool _isAttack;
+   public float _speed = 3f;
 
-    //Статы персонажа
-    public float _attackSpeed;
-    public float _maxHP;
-    public float _ownHealth;
-    public float _currentHP;
-    public float _attack;
-    public float _kritChance;
-    public float _dodgeChance;
-    public float _defence;
+   #region  Attributes
+   public int _strange = 1;
+   public int _agility = 1;
+   public int _endurance = 1;
+   public int _luck = 1;
+   public int _magic = 1;
+   #endregion Attributes
 
-    public void CalculateStats()
-    {
-        _maxHP = _ownHealth + _endurance * 12;
-        _attack = _strange * 2;
-        _attackSpeed = 0.5f + _agility * 0.0067f;
-        _kritChance = _luck * 0.5f;
-        _dodgeChance = _agility * 0.2f;
-    }
+   #region  Stats
+   public float _attackSpeed;
+   public float _maxHP;
+   public float _ownHealth;
+   public float _currentHP;
+   public float _attack;
+   public float _kritChance;
+   public float _dodgeChance;
+   public float _defence;
+   #endregion Stats
 
-    public void TakeDamage(int damage)
-    {
-        if (!DodgeChance((int)_dodgeChance))
-        {
-            damage -= (int)(damage * _defence);
-            _currentHP -= damage;
-            if (_currentHP <= 0)
-            {
-                _currentHP = 0;
-                Die();
-            }
-        }
-    }
 
-    public bool KritChance(int chance)
-    {
-        return Random.Range(0, 100) < chance;
-    }
+   #region  Constants
+   private const float factorAttack = 2;
+   private const float factorHealth = 12;
+   private const float factorAttackSpeed = 0.0067f;
+   private const float factorKritChance = 0.5f;
+   private const float factorDodgeChance = 0.2f;
+   #endregion Constants
 
-    public bool DodgeChance(int chance)
-    {
-        return Random.Range(0, 100) < chance;
-    }
+   public void CalculateStats()
+   {
+      _maxHP = _ownHealth + _endurance * factorHealth;
+      _attack = _strange * factorAttack;
+      _attackSpeed = 0.5f + _agility * factorAttackSpeed;
+      _kritChance = _luck * factorKritChance;
+      _dodgeChance = _agility * factorDodgeChance;
+   }
 
-    virtual protected void Die()
-    {
-        //Смерть челика
-    }
+   virtual protected void Die()
+   {
+      //Смерть челика
+   }
 }
 
 

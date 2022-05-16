@@ -5,7 +5,7 @@ public class HealthBarEnemy : MonoBehaviour
 {
    [SerializeField] private Slider _slider;
    [SerializeField] private Vector3 _offset;
-   [SerializeField] private Bot enemy;
+   [SerializeField] private Enemy enemy;
 
    void Update()
    {

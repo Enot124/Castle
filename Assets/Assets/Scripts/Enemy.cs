@@ -1,15 +1,15 @@
 using UnityEngine;
 using TMPro;
-public class Bot : Entity<Bot>
+public class Enemy : Entity<Enemy>
 {
    private Animator _animator;
    private bool _isDied = false;
    [SerializeField] private Transform attackPoint;
    [SerializeField] private LayerMask enemyLayer;
    public Transform Hero;
-   private BotState _moveState
+   private EnemyState _moveState
    {
-      get { return (BotState)_animator.GetInteger("state"); }
+      get { return (EnemyState)_animator.GetInteger("state"); }
       set { _animator.SetInteger("state", (int)value); }
    }
 
@@ -29,7 +29,7 @@ public class Bot : Entity<Bot>
          if (distanceToPlayer <= _attackRange)
          {
             _isAttack = true;
-            Attack();
+            //Attack();
          }
          else
          {
@@ -52,7 +52,7 @@ public class Bot : Entity<Bot>
          }
       }
    }
-   protected void Attack()
+   /*protected void Attack()
    {
       if (_timer <= 0)
       {
@@ -73,7 +73,7 @@ public class Bot : Entity<Bot>
          enemy.GetComponent<Entity<Hero>>().TakeDamage(damage);
          Debug.Log(enemy.name + " was delt " + damage + " damage!");
       }
-   }
+   }*/
    private void OnDrawGizmos()
    {
       Gizmos.color = Color.red;
@@ -89,7 +89,7 @@ public class Bot : Entity<Bot>
 
    private void Idle()
    {
-      _moveState = BotState.Idle;
+      _moveState = EnemyState.Idle;
    }
    private void IsNoAttack()
    {
@@ -97,7 +97,7 @@ public class Bot : Entity<Bot>
    }
 }
 
-enum BotState
+enum EnemyState
 {
    Idle,
    Walk
