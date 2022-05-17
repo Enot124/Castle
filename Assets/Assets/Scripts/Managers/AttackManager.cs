@@ -17,42 +17,11 @@ namespace Assembly_CSharp.Assets.Assets.Scripts.Managers
             Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(entity.AttackPoint, entity.AttackRange, entity.OppositeLayer);
             foreach (Collider2D enemy in hitEnemies)
             {
-               enemy.GetComponent<Entity<Enemy>>().TakeDamage(damage, enemy);
+               var enemyDamageable = enemy.GetComponent<IDamageable>();
+               TakeDamage((int)damage, enemyDamageable);
                Debug.Log(enemy.name + " was delt " + damage + " damage!");
             }
          }
-         /*
-   if (_timer <= 0)
-   {
-      _animator.SetTrigger("Attack");
-      _timer = 1 / _attackSpeed;
-   }
-}
-public void OnAttack()
-{
-   int damage = (int)_attack;
-   if (KritChance((int)_kritChance))
-   {
-      damage *= 2;
-   }
-   Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, _attackRange, enemyLayer);
-   foreach (Collider2D enemy in hitEnemies)
-   {
-      enemy.GetComponent<Entity<Hero>>().TakeDamage(damage);
-      Debug.Log(enemy.name + " was delt " + damage + " damage!");
-   }
-}*/
-      }
-
-
-      private static bool KritChance(int chance)
-      {
-         return Random.Range(0, 100) < chance;
-      }
-
-      public static bool DodgeChance(int chance)
-      {
-         return Random.Range(0, 100) < chance;
       }
 
       public static void TakeDamage(int damage, IDamageable entity)
@@ -67,7 +36,16 @@ public void OnAttack()
                //Die();
             }
          }
+      }
 
+      private static bool KritChance(int chance)
+      {
+         return Random.Range(0, 100) < chance;
+      }
+
+      public static bool DodgeChance(int chance)
+      {
+         return Random.Range(0, 100) < chance;
       }
    }
 }
