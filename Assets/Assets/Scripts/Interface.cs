@@ -11,8 +11,8 @@ public class Interface : MonoBehaviour
 
    private void Update()
    {
-      SetHealthValue((int)Hero._currentHP, (int)Hero._maxHP);
-      SetExpierenceValue(Hero._expierence, Hero._maxExpierence);
+      //SetHealthValue((int)Hero._currentHP, (int)Hero._maxHP);
+      //SetExpierenceValue(Hero._expierence, Hero._maxExpierence);
    }
 
    public void SetHealthValue(int health, int maxHealth)
@@ -29,9 +29,9 @@ public class Interface : MonoBehaviour
 
    public void ShowMenu()
    {
-      menu.SetActive(true);
-      if (Hero._levelStats != 0)
-         parametresButtons.SetActive(true);
+      // menu.SetActive(true);
+      // if (Hero._levelStats != 0)
+      //    parametresButtons.SetActive(true);
    }
 
    public void CloseMenu()

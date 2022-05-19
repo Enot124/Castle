@@ -1,3 +1,4 @@
+using System;
 using System.Reflection;
 using Assembly_CSharp.Assets.Assets.Scripts.Interfaces;
 using UnityEngine;
@@ -46,12 +47,12 @@ namespace Assembly_CSharp.Assets.Assets.Scripts.Managers
 
         private static bool KritChance(int chance)
         {
-            return Random.Range(0, 100) < chance;
+            return UnityEngine.Random.Range(0, 100) < chance;
         }
 
         public static bool DodgeChance(int chance)
         {
-            return Random.Range(0, 100) < chance;
+            return UnityEngine.Random.Range(0, 100) < chance;
         }
     }
 }
