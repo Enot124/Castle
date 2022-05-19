@@ -11,5 +11,6 @@ namespace Assembly_CSharp.Assets.Assets.Scripts.Interfaces
       public Vector2 AttackPoint { get; }
       public Vector2 AttackRange { get; }
       public LayerMask OppositeLayer { get; }
+      public void OnAttack();
    }
 }
