@@ -31,7 +31,6 @@ public abstract class Entity<T> : MonoBehaviour
    public float _defence;
    #endregion Stats
 
-
    #region  Constants
    private const float factorAttack = 2;
    private const float factorHealth = 12;

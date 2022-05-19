@@ -9,8 +9,8 @@ public class HealthBarEnemy : MonoBehaviour
 
    void Update()
    {
-      _slider.transform.position = enemy.transform.position + _offset;
-      SetHealthValue((int)enemy._currentHP, (int)enemy._maxHP);
+      //_slider.transform.position = enemy.transform.position + _offset;
+      //SetHealthValue((int)enemy._currentHP, (int)enemy._maxHP);
    }
 
    public void SetHealthValue(int currentHealth, int maxHealth)
