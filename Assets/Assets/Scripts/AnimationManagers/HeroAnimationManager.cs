@@ -49,10 +49,10 @@ namespace Assembly_CSharp.Assets.Assets.Scripts.AnimationManagers
             set { _animator.SetInteger("state", (int)value); }
         }
 
-    }
-    enum MoveState
-    {
-        Idle,
-        Walk
-    }
+   }
+   enum MoveState
+   {
+      Idle,
+      Walk
+   }
 }
