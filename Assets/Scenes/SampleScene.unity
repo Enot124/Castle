@@ -913,6 +913,7 @@ GameObject:
   m_Component:
   - component: {fileID: 123750769}
   - component: {fileID: 123750770}
+  - component: {fileID: 123750771}
   m_Layer: 5
   m_Name: Interface
   m_TagString: Untagged
@@ -952,14 +953,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 123750768}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac48df440441a7046b07699314971c35, type: 3}
+  m_Script: {fileID: 11500000, guid: f61d3d802bce43a4987fe7f71250ed3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menu: {fileID: 2057702072}
-  parametresButtons: {fileID: 1197746413}
   sliderHealth: {fileID: 164930436}
   sliderExpierence: {fileID: 1753062690}
   Hero: {fileID: 222127830}
+--- !u!114 &123750771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123750768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5339ea1a8b7d0604fb21882336bbf70b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _menuButton: {fileID: 2057702072}
+  _nameLvl: {fileID: 1695949178}
+  _countHP: {fileID: 327201889}
+  _freeattr: {fileID: 393774025}
+  _countattr: {fileID: 499291253}
+  _characters: {fileID: 1606187755}
 --- !u!1 &134731838
 GameObject:
   m_ObjectHideFlags: 0
@@ -1248,33 +1265,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 138504444}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cca071318d623d4a84eb2b2fb7ebaed, type: 3}
+  m_Script: {fileID: 11500000, guid: 06bb1a8c0382b6d4091c407fff9189c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: 
-  _attackRange: 0.5
-  _expierence: 0
-  _level: 0
-  _timer: 0
-  _isAttack: 0
-  _strange: 10
-  _agility: 1
-  _endurance: 20
-  _luck: 1
-  _magic: 1
-  _attackSpeed: 0
-  _maxHP: 20
-  _ownHealth: 0
-  _currentHP: 0
-  _attack: 0
-  _kritChance: 0
-  _dodgeChance: 0
-  _defence: 0
+  _layer:
+    serializedVersion: 2
+    m_Bits: 64
   attackPoint: {fileID: 1565234499}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 8
   Hero: {fileID: 222127826}
+  _currentHP: 100
 --- !u!114 &138504452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1576,64 +1578,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!1 &195179573
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 195179574}
-  - component: {fileID: 195179575}
-  m_Layer: 3
-  m_Name: Sword
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &195179574
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 195179573}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.17, y: 0.09, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 222127826}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &195179575
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 195179573}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0, y: 0.7}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.1704998, y: 0.9500781}
-  m_EdgeRadius: 0
 --- !u!1 &202820116
 GameObject:
   m_ObjectHideFlags: 0
@@ -1647,7 +1591,7 @@ GameObject:
   - component: {fileID: 202820119}
   - component: {fileID: 202820118}
   m_Layer: 5
-  m_Name: PlayerMenu
+  m_Name: EnemyHealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1917,7 +1861,6 @@ Transform:
   m_Children:
   - {fileID: 134731839}
   - {fileID: 1980027621}
-  - {fileID: 195179574}
   m_Father: {fileID: 555055674}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1996,39 +1939,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a150857e8150a64295b1f5ae05e7a66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: Efreytor
-  _attackRange: 0.5
-  _expierence: 50
-  _level: 1
-  _timer: 0
-  _isAttack: 0
-  _strange: 15
-  _agility: 70
-  _endurance: 20
-  _luck: 1
-  _magic: 1
-  _attackSpeed: 0
-  _maxHP: 0
-  _ownHealth: 0
-  _currentHP: 0
-  _attack: 0
-  _kritChance: 0
-  _dodgeChance: 0
-  _defence: 0
-  _maxExpierence: 100
-  _levelStats: 3
-  parametresButtons: {fileID: 1197746413}
-  menu: {fileID: 2057702072}
-  enemy: {fileID: 138504447}
-  nickname: {fileID: 1695949178}
-  hpExp: {fileID: 327201889}
-  parametresStats: {fileID: 499291253}
-  charactersStats: {fileID: 1606187755}
-  levelFreeStats: {fileID: 393774025}
+  _layer:
+    serializedVersion: 2
+    m_Bits: 8
   attackPoint: {fileID: 1980027621}
-  enemyLayer:
+  _attackRange: {x: 2, y: 2}
+  _opossiteLayer:
     serializedVersion: 2
     m_Bits: 64
+  _currentHP: 100
+  _maxHP: 100
+  _maxExpierence: 200
 --- !u!95 &222127832
 Animator:
   serializedVersion: 4
@@ -2604,7 +2525,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.75, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3925,8 +3846,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 123750770}
-        m_TargetAssemblyTypeName: Interface, Assembly-CSharp
+      - m_Target: {fileID: 123750771}
+        m_TargetAssemblyTypeName: Assembly_CSharp.Assets.Assets.Scripts.GUI.HeroMenu,
+          Assembly-CSharp
         m_MethodName: CloseMenu
         m_Mode: 1
         m_Arguments:
@@ -27417,7 +27339,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -41293,7 +41215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1530833819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41592,8 +41514,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 123750770}
-        m_TargetAssemblyTypeName: Interface, Assembly-CSharp
+      - m_Target: {fileID: 123750771}
+        m_TargetAssemblyTypeName: Assembly_CSharp.Assets.Assets.Scripts.GUI.HeroMenu,
+          Assembly-CSharp
         m_MethodName: ShowMenu
         m_Mode: 1
         m_Arguments:
@@ -44010,7 +43933,7 @@ GameObject:
   - component: {fileID: 2057702075}
   - component: {fileID: 2057702074}
   m_Layer: 5
-  m_Name: Background
+  m_Name: HeroMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
