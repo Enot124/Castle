@@ -12,7 +12,7 @@ namespace Assembly_CSharp.Assets.Assets.Scripts.GUI
       private void Update()
       {
          SetHealthValue((int)Hero._currentHP, (int)Hero._maxHP);
-         //SetExpierenceValue(Hero.Experience, Hero._maxExpierence);
+         SetExpierenceValue(Hero._experience, Hero._maxExpierence);
       }
 
       public void SetHealthValue(int health, int maxHealth)

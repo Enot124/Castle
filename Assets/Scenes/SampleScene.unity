@@ -971,6 +971,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5339ea1a8b7d0604fb21882336bbf70b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _hero: {fileID: 222127830}
   _menuButton: {fileID: 2057702072}
   _nameLvl: {fileID: 1695949178}
   _countHP: {fileID: 327201889}
@@ -1216,7 +1217,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 138504444}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -1949,6 +1950,7 @@ MonoBehaviour:
     m_Bits: 64
   _currentHP: 100
   _maxHP: 100
+  _experience: 100
   _maxExpierence: 200
 --- !u!95 &222127832
 Animator:
@@ -42863,7 +42865,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 283.60004, y: -119.100006}
+  m_AnchoredPosition: {x: 283.59998, y: -119.099976}
   m_SizeDelta: {x: 373.77, y: 30.004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1753062690
@@ -43820,7 +43822,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1980027620}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.9, y: 0, z: 0}
+  m_LocalPosition: {x: 0.9, y: -0.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

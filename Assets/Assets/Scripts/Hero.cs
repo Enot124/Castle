@@ -6,7 +6,8 @@ public class Hero : Entity<Hero>,
    ICanMove,
    ICanAttack,
    IDamageable,
-   IHaveAttr
+   IHaveAttr,
+   IHaveBaseInfo
 {
 
    #region ICanAttack
@@ -40,6 +41,7 @@ public class Hero : Entity<Hero>,
    public float _currentHP = 100;
    public float _maxHP = 100;
    public float CurrentHealth { get => _currentHP; set => _currentHP = value; }
+   public float MaxHealth { get => _maxHP; set => _maxHP = value; }
 
    #endregion IDamageable  
 
@@ -55,10 +57,16 @@ public class Hero : Entity<Hero>,
    public int Agility => throw new NotImplementedException();
    public int Endurance => throw new NotImplementedException();
    public int Luck => throw new NotImplementedException();
-   public int Experience => throw new NotImplementedException();
-   public int _maxExpierence = 200;
-   public int Level => throw new NotImplementedException();
    #endregion IHaveAttr
+
+   #region IHaveBaseInfo
+   public string Name => throw new NotImplementedException();
+   public int Level => throw new NotImplementedException();
+   public int _experience = 100;
+   public int _maxExpierence = 200;
+   public int Expierence { get => _experience; set => _experience = value; }
+   public int MaxExpierence { get => _maxExpierence; set => _maxExpierence = value; }
+   #endregion IHaveBaseInfo
 
    void Awake()
    {
