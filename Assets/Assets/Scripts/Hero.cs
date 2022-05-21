@@ -53,15 +53,16 @@ public class Hero : Entity<Hero>,
    #endregion ICanMove
 
    #region IHaveAttr
-   public int Strange => throw new NotImplementedException();
-   public int Agility => throw new NotImplementedException();
-   public int Endurance => throw new NotImplementedException();
-   public int Luck => throw new NotImplementedException();
+   public int FreeAttr { get => 0; set => value++; }
+   public int Strange { get => 1; set => value++; }
+   public int Agility { get => 1; set => value++; }
+   public int Endurance { get => 1; set => value++; }
+   public int Luck { get => 1; set => value++; }
    #endregion IHaveAttr
 
    #region IHaveBaseInfo
-   public string Name => throw new NotImplementedException();
-   public int Level => throw new NotImplementedException();
+   public string Name { get => "Efreytor"; }
+   public int Level { get => 1; set => value++; }
    public int _experience = 100;
    public int _maxExpierence = 200;
    public int Expierence { get => _experience; set => _experience = value; }

@@ -6,8 +6,6 @@ namespace Assembly_CSharp.Assets.Assets.Scripts.GUI
 {
    public class HeroMenu : MonoBehaviour
    {
-      [SerializeField] private Hero _hero;
-      [SerializeField] private GameObject _menuButton;
       #region MenuStats
       [SerializeField] private TextMeshProUGUI _nameLvl;
       [SerializeField] private TextMeshProUGUI _countHP;
@@ -15,6 +13,9 @@ namespace Assembly_CSharp.Assets.Assets.Scripts.GUI
       [SerializeField] private TextMeshProUGUI _countattr;
       [SerializeField] private TextMeshProUGUI _characters;
       #endregion MenuStats
+
+      [SerializeField] private Hero _hero;
+      [SerializeField] private GameObject _menuButton;
 
       public void ShowMenu()
       {
