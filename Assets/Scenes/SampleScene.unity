@@ -631,12 +631,12 @@ MonoBehaviour:
 
     Attack Speed
 
+    Krit Chance
+
     Dodge
 
     Defence
 
-    Krit
-    Chance
 
 '
   m_isRightToLeft: 0
@@ -971,13 +971,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5339ea1a8b7d0604fb21882336bbf70b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hero: {fileID: 222127830}
-  _menuButton: {fileID: 2057702072}
   _nameLvl: {fileID: 1695949178}
   _countHP: {fileID: 327201889}
   _freeattr: {fileID: 393774025}
   _countattr: {fileID: 499291253}
   _characters: {fileID: 1606187755}
+  _hero: {fileID: 222127830}
+  _menuButton: {fileID: 2057702072}
 --- !u!1 &134731838
 GameObject:
   m_ObjectHideFlags: 0
@@ -1278,6 +1278,7 @@ MonoBehaviour:
     m_Bits: 8
   Hero: {fileID: 222127826}
   _currentHP: 100
+  _maxHP: 100
 --- !u!114 &138504452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1287,12 +1288,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 138504444}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a27b0b0c276feb04a80bcffeed0491fa, type: 3}
+  m_Script: {fileID: 11500000, guid: 06bb1a8c0382b6d4091c407fff9189c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slider: {fileID: 498935452}
-  _offset: {x: 0, y: 2, z: 0}
-  enemy: {fileID: 138504451}
+  _layer:
+    serializedVersion: 2
+    m_Bits: 64
+  attackPoint: {fileID: 1565234499}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  Hero: {fileID: 222127826}
+  _currentHP: 100
+  _maxHP: 100
 --- !u!1 &164930434
 GameObject:
   m_ObjectHideFlags: 0
@@ -1784,11 +1792,11 @@ GameObject:
   m_Component:
   - component: {fileID: 222127826}
   - component: {fileID: 222127825}
-  - component: {fileID: 222127829}
-  - component: {fileID: 222127830}
   - component: {fileID: 222127832}
+  - component: {fileID: 222127829}
   - component: {fileID: 222127828}
   - component: {fileID: 222127827}
+  - component: {fileID: 222127830}
   m_Layer: 3
   m_Name: Knight
   m_TagString: Untagged
@@ -1856,8 +1864,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 222127824}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.46, y: -8.99, z: 0}
-  m_LocalScale: {x: 1, y: 1.3, z: 1}
+  m_LocalPosition: {x: -16.64, y: -9.21, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 134731839}
@@ -1944,7 +1952,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   attackPoint: {fileID: 1980027621}
-  _attackRange: {x: 2, y: 2}
+  _attackRange: {x: 1.3, y: 2.5}
   _opossiteLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -10484,14 +10492,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28f53e14c3cb0a3419c1773d18ab60da, type: 3}
+  m_Script: {fileID: 11500000, guid: 99e859a7ab0fc804fa776d6d217e596b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 222127826}
-  leftLimit: 8.9
-  rightLimit: 31.05
-  bottomLimit: -4.97
-  upperLimit: 24.8
+  player: {fileID: 0}
+  leftLimit: 8.91
+  rightLimit: 31.12
+  bottomLimit: -5
+  upperLimit: 25
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -10937,7 +10945,7 @@ Transform:
   - {fileID: 222127826}
   - {fileID: 138504447}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &576564751
 GameObject:
@@ -32461,7 +32469,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &956005446
 GameObject:
@@ -40441,7 +40449,7 @@ Transform:
   m_Children:
   - {fileID: 833279561}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1387412256
 GameObject:
@@ -41294,7 +41302,7 @@ RectTransform:
   - {fileID: 123750769}
   - {fileID: 2057702073}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -43822,7 +43830,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1980027620}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.9, y: -0.13, z: 0}
+  m_LocalPosition: {x: 0.74, y: -0.38, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

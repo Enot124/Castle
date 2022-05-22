@@ -19,6 +19,7 @@ namespace Assembly_CSharp.Assets.Assets.Scripts.GUI
 
       public void ShowMenu()
       {
+         WriteStats();
          _menuButton.SetActive(true);
       }
       public void CloseMenu()
@@ -28,6 +29,19 @@ namespace Assembly_CSharp.Assets.Assets.Scripts.GUI
 
       public void WriteStats()
       {
+         _nameLvl.text = _hero.Name + ", " + _hero.Level + " lvl";
+
+         _countHP.text = _hero.CurrentHealth + "/" + _hero.MaxHealth
+                         + "\n" + _hero.Expierence + "/" + _hero.MaxExpierence;
+
+         _freeattr.text = _hero.FreeAttr + " free";
+
+         _countattr.text = _hero.Strange + "\n" + _hero.Agility + "\n"
+                         + _hero.Endurance + "\n" + _hero.Luck;
+
+         _characters.text = _hero.Damage + "\n" + _hero.AttackSpeed + "\n" +
+                         +_hero.KritChance + "\n" + _hero.DodgeChance + "\n"
+                         + _hero.Defence;
 
       }
    }

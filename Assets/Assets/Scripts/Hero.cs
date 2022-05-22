@@ -15,11 +15,12 @@ public class Hero : Entity<Hero>,
    private DateTime LastAttackDT = DateTime.UtcNow;
    public float Damage { get => 10f; }
    public float KritChance { get => 0.1f; }
+   public float AttackSpeed { get => 1f; }
    public bool IsCanAttack
    {
       get
       {
-         return DateTime.UtcNow > LastAttackDT + TimeSpan.FromSeconds(1 / 1);
+         return DateTime.UtcNow > LastAttackDT + TimeSpan.FromSeconds(1 / AttackSpeed);
       }
    }
    public Vector2 AttackPoint { get => attackPoint.position; }
