@@ -16,7 +16,14 @@ namespace Assembly_CSharp.Assets.Assets.Scripts.GUI
 
       [SerializeField] private Hero _hero;
       [SerializeField] private GameObject _menuButton;
-
+      [SerializeField] private GameObject _parametreButtons;
+      void Update()
+      {
+         if (_hero.FreeAttr > 0)
+            _parametreButtons.SetActive(true);
+         else
+            _parametreButtons.SetActive(false);
+      }
       public void ShowMenu()
       {
          WriteStats();
@@ -43,6 +50,43 @@ namespace Assembly_CSharp.Assets.Assets.Scripts.GUI
                          +_hero.KritChance + "\n" + _hero.DodgeChance + "\n"
                          + _hero.Defence;
 
+      }
+
+      public void AddStrange()
+      {
+         if (_hero.FreeAttr > 0)
+         {
+            _hero.Strange++;
+            _hero.FreeAttr--;
+            WriteStats();
+         }
+      }
+      public void AddAgility()
+      {
+         if (_hero.FreeAttr > 0)
+         {
+            _hero.Agility++;
+            _hero.FreeAttr--;
+            WriteStats();
+         }
+      }
+      public void AddEndurance()
+      {
+         if (_hero.FreeAttr > 0)
+         {
+            _hero.Endurance++;
+            _hero.FreeAttr--;
+            WriteStats();
+         }
+      }
+      public void AddLuck()
+      {
+         if (_hero.FreeAttr > 0)
+         {
+            _hero.Luck++;
+            _hero.FreeAttr--;
+            WriteStats();
+         }
       }
    }
 }

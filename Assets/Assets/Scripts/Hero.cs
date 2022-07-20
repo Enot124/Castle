@@ -54,11 +54,16 @@ public class Hero : Entity<Hero>,
    #endregion ICanMove
 
    #region IHaveAttr
-   public int FreeAttr { get => 0; set => value++; }
-   public int Strange { get => 1; set => value++; }
-   public int Agility { get => 1; set => value++; }
-   public int Endurance { get => 1; set => value++; }
-   public int Luck { get => 1; set => value++; }
+   private int _freeattr = 6;
+   private int _strange = 1;
+   private int _agility = 1;
+   private int _endurance = 1;
+   private int _luck = 1;
+   public int FreeAttr { get => _freeattr; set => _freeattr = value; }
+   public int Strange { get => _strange; set => _strange = value; }
+   public int Agility { get => _agility; set => _agility = value; }
+   public int Endurance { get => _endurance; set => _endurance = value; }
+   public int Luck { get => _luck; set => _luck = value; }
    #endregion IHaveAttr
 
    #region IHaveBaseInfo

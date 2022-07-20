@@ -978,6 +978,7 @@ MonoBehaviour:
   _characters: {fileID: 1606187755}
   _hero: {fileID: 222127830}
   _menuButton: {fileID: 2057702072}
+  _parametreButtons: {fileID: 1197746413}
 --- !u!1 &134731838
 GameObject:
   m_ObjectHideFlags: 0
@@ -1952,7 +1953,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   attackPoint: {fileID: 1980027621}
-  _attackRange: {x: 1.3, y: 2.5}
+  _attackRange: {x: 1.3, y: 2}
   _opossiteLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -40448,6 +40449,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 833279561}
+  - {fileID: 1471466299}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -40747,8 +40749,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 222127830}
-        m_TargetAssemblyTypeName: Hero, Assembly-CSharp
+      - m_Target: {fileID: 123750771}
+        m_TargetAssemblyTypeName: Assembly_CSharp.Assets.Assets.Scripts.GUI.HeroMenu,
+          Assembly-CSharp
         m_MethodName: AddStrange
         m_Mode: 1
         m_Arguments:
@@ -41131,6 +41134,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!1 &1471466298
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1471466299}
+  - component: {fileID: 1471466300}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1471466299
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471466298}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1385209740}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1471466300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471466298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c50e5e0897655445bab1efa68550f98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hero: {fileID: 222127830}
 --- !u!1 &1491893090
 GameObject:
   m_ObjectHideFlags: 0
@@ -42345,8 +42393,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 222127830}
-        m_TargetAssemblyTypeName: Hero, Assembly-CSharp
+      - m_Target: {fileID: 123750771}
+        m_TargetAssemblyTypeName: Assembly_CSharp.Assets.Assets.Scripts.GUI.HeroMenu,
+          Assembly-CSharp
         m_MethodName: AddLuck
         m_Mode: 1
         m_Arguments:
@@ -43401,8 +43450,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 222127830}
-        m_TargetAssemblyTypeName: Hero, Assembly-CSharp
+      - m_Target: {fileID: 123750771}
+        m_TargetAssemblyTypeName: Assembly_CSharp.Assets.Assets.Scripts.GUI.HeroMenu,
+          Assembly-CSharp
         m_MethodName: AddAgility
         m_Mode: 1
         m_Arguments:
@@ -43534,8 +43584,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 222127830}
-        m_TargetAssemblyTypeName: Hero, Assembly-CSharp
+      - m_Target: {fileID: 123750771}
+        m_TargetAssemblyTypeName: Assembly_CSharp.Assets.Assets.Scripts.GUI.HeroMenu,
+          Assembly-CSharp
         m_MethodName: AddEndurance
         m_Mode: 1
         m_Arguments:
@@ -43830,7 +43881,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1980027620}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.74, y: -0.38, z: 0}
+  m_LocalPosition: {x: 0.74, y: -0.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

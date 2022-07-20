@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Assembly_CSharp.Assets.Assets.Scripts.Managers
 {
-   public class LevelManager
+   public class LevelManager : MonoBehaviour
    {
       private const int _freeattr = 6;
       [SerializeField] private Hero _hero;
@@ -13,7 +13,7 @@ namespace Assembly_CSharp.Assets.Assets.Scripts.Managers
             LevelUp();
          }
       }
-      public void LevelUp()
+      private void LevelUp()
       {
          _hero.Level++;
          _hero.FreeAttr += _freeattr;
@@ -23,6 +23,5 @@ namespace Assembly_CSharp.Assets.Assets.Scripts.Managers
          else
          { _hero.MaxExpierence = (int)(_hero.MaxExpierence * 0.1f); }
       }
-
    }
 }
