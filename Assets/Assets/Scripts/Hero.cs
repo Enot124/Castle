@@ -69,10 +69,8 @@ public class Hero : Entity<Hero>,
    #region IHaveBaseInfo
    public string Name { get => "Efreytor"; }
    public int Level { get => 1; set => value++; }
-   public int _experience = 100;
-   public int _maxExpierence = 200;
-   public int Expierence { get => _experience; set => _experience = value; }
-   public int MaxExpierence { get => _maxExpierence; set => _maxExpierence = value; }
+   public int Expierence { get; set; }
+   public int MaxExpierence { get; set; }
    #endregion IHaveBaseInfo
 
    void Awake()

@@ -1,19 +1,44 @@
 using UnityEngine;
-using TMPro;
 using Assembly_CSharp.Assets.Assets.Scripts.Interfaces;
+using System;
 
 public class Enemy : Entity<Enemy>,
-   IDamageable
+   IDamageable, ICanAttack
 {
    private Animator _animator;
-   [SerializeField] private Transform attackPoint;
    [SerializeField] private LayerMask enemyLayer;
-   public Transform Hero;
+   [SerializeField] private Transform Hero;
    private EnemyState _moveState
    {
       get { return (EnemyState)_animator.GetInteger("state"); }
       set { _animator.SetInteger("state", (int)value); }
    }
+   #region ICanAttack
+   [SerializeField] private Transform attackPoint;
+   private DateTime LastAttackDT = DateTime.UtcNow;
+   public float Damage { get => 10f; }
+   public float KritChance { get => 0.1f; }
+   public float AttackSpeed { get => 1f; }
+   public bool IsCanAttack
+   {
+      get
+      {
+         return DateTime.UtcNow > LastAttackDT + TimeSpan.FromSeconds(1 / AttackSpeed);
+      }
+   }
+   public Vector2 AttackPoint { get => attackPoint.position; }
+   public Vector2 _attackRange;
+   public Vector2 AttackRange { get => _attackRange; }
+   public LayerMask OppositeLayer { get => _opossiteLayer; }
+   public LayerMask _opossiteLayer;
+   public event EventHandler Attacking;
+   public void OnAttack()
+   {
+      Attacking?.Invoke(null, null);
+      LastAttackDT = DateTime.UtcNow;
+   }
+   #endregion ICanAttack
+   
    public float Defence => 0;
    public float DodgeChance => 0;
    public float _currentHP = 100;
