@@ -3,16 +3,19 @@ using Assembly_CSharp.Assets.Assets.Scripts.Interfaces;
 using System;
 
 public class Enemy : Entity<Enemy>,
-   IDamageable, ICanAttack
+   ICanMove,
+   IDamageable,
+   ICanAttack
 {
    private Animator _animator;
-   [SerializeField] private LayerMask enemyLayer;
-   [SerializeField] private Transform Hero;
-   private EnemyState _moveState
-   {
-      get { return (EnemyState)_animator.GetInteger("state"); }
-      set { _animator.SetInteger("state", (int)value); }
-   }
+
+   #region ICanMove
+   public float Speed { get => 3.0f; }
+   private Rigidbody2D _rigidBody;
+   public Rigidbody2D Rigidbody2D { get => _rigidBody; set => _rigidBody = value; }
+   public Vector2 MoveDirection { get; set; }
+   #endregion ICanMove
+
    #region ICanAttack
    [SerializeField] private Transform attackPoint;
    private DateTime LastAttackDT = DateTime.UtcNow;
@@ -38,28 +41,17 @@ public class Enemy : Entity<Enemy>,
       LastAttackDT = DateTime.UtcNow;
    }
    #endregion ICanAttack
-   
+
+   #region IDamageable
    public float Defence => 0;
    public float DodgeChance => 0;
    public float _currentHP = 100;
    public float _maxHP = 100;
    public float CurrentHealth { get => _currentHP; set => _currentHP = value; }
    public float MaxHealth { get => _maxHP; set => _maxHP = value; }
-   private void Awake()
+   #endregion IDamageable
+   void Awake()
    {
-
+      _rigidBody = GetComponent<Rigidbody2D>();
    }
-
-
-   private void OnDrawGizmos()
-   {
-      Gizmos.color = Color.red;
-      //Gizmos.DrawWireSphere(attackPoint.position, _attackRange);
-   }
-}
-
-enum EnemyState
-{
-   Idle,
-   Walk
 }

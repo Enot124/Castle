@@ -18,6 +18,11 @@ namespace Assembly_CSharp.Assets.Assets.Scripts.Managers
          _hero.Level++;
          _hero.FreeAttr += _freeattr;
          _hero.Expierence -= _hero.MaxExpierence;
+         SetMaxExpierence();
+      }
+
+      private void SetMaxExpierence()
+      {
          if (_hero.Level % 10 == 0)
          { _hero.MaxExpierence = _hero.MaxExpierence + _hero.MaxExpierence * 10; }
          else
